@@ -44,4 +44,9 @@ public class HomeController {
         userRepository.save(user);
         return "redirect:/";
     }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
 }
