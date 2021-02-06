@@ -11,4 +11,4 @@ http://localhost:8087/
 
 mvn package
 
-java -jar target\spd816.jar --server.port=8090
+java -jar target/spd816.jar --server.port=8090
