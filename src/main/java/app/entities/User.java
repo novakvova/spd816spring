@@ -1,17 +1,21 @@
 package app.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name = "tbl_users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable=false)
+    @NotBlank(message = "Ім'я є обовзяковий")
     private String name;
 
     @Column(nullable=false)
+    @NotBlank(message = "Емейл є обовзяковий")
     private String email;
 
     public User() {
