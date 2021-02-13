@@ -2,6 +2,7 @@ package app.web;
 
 import app.entities.User;
 import app.repositories.UserRepository;
+import app.seeder.SeederDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +17,14 @@ import java.util.*;
 public class HomeController {
 
     private final UserRepository userRepository;
+    private final SeederDb seederDb;
 
     @Autowired
-    public HomeController(UserRepository userRepository) {
+    public HomeController(UserRepository userRepository,
+                          SeederDb seederDb) {
         this.userRepository = userRepository;
+        this.seederDb=seederDb;
+        this.seederDb.SeedAllTabels();
     }
 
     @GetMapping("/")
